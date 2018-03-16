@@ -9,28 +9,27 @@ document.getElementById("wins").innerHTML = "Wins: " + wins;
 document.getElementById("losses").innerHTML = "Losses: " + losses;
 document.getElementById("guessesleft").innerHTML = "Guesses Left: " + guessesleft;
 document.getElementById("userguess").innerHTML = "Your Guesses So Far: ";
-        
+
 document.onkeypress = function(event) {
 
 var userguess = event.key;
 array.push(userguess)
 
-console.log(array)
-
-
 if(userguess === computerchoice){
     wins++;
+    array = [];
 }
 
 else{
     guessesleft --;
-}
+    }
 
 if(guessesleft === 0){
     losses++;
     guessesleft = 10;
+    array = [];
 }
-        
+
 document.getElementById("wins").innerHTML = "Wins: " + wins;
 document.getElementById("losses").innerHTML = "Losses: " + losses;
 document.getElementById("guessesleft").innerHTML = "Guesses Left: " + guessesleft;
